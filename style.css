@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    cursor: none;
+}
+
+body {
+    font-family: Poppins;
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        
+}
+
+.container {
+    border-radius: 10px;
+    padding: 20px;
+    background: rgb(0, 0, 0, 0.8); /*AQUI TEM TRANSPARÊNCIA*/
+}
+
+/* ============================================================
+             DIV COM EFEITO QUE FICA POR DE TRÁS
+              */
+.efect {
+    border-radius: 10px;
+    margin-top: 60px;
+    position: relative;
+}
+
+.efect:before, .efect:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(35deg,#00fbfb, #006c0d, #00ff91, #c2e7bf, #08430f, #353434, #08430f, #01650d, #10ad02, #00ffb7, #006c0d, #00fbfb);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: animate 15s linear infinite;
+    border-radius: 10px;
+}
+
+.efect:after {
+    filter: blur(50px);
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 300% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+header, img {
+    height: 100px;
+}
+/* =============================================================== */
+
+
+.imagem,
+#imgPerson {
+    text-align: center;
+}
+
+.imagem img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.group-form {
+    padding: 5px 0;
+    
+}
+
+.infoDesejada {
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: #ffffff;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.group-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-family: Poppins;
+    text-transform: uppercase;
+    margin-top: 15px;
+    cursor: none;
+
+}
+
+.group-form input[type=submit] {
+    background-color: #00737c;
+    font-weight: 600;
+    color: #FFF;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: none;
+}
+
+#res {
+    font-family: monospace;
+    color: white;
+    border-radius: 5px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: center;
+    word-break: break-word;
+
+}
+
+#resimg>img {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+/* =============================================
+                 CHECKBOX */
+.inputs {
+    width: 100%;
+    align-content: space-around;
+    padding-inline: 30px;
+  
+}
+
+.inputs input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 15px;
+    
+}
+
+.inputs input[type="checkbox"]:last-of-type {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 55px;
+    
+}
+
+.inputs input[type="checkbox"]:checked {
+    
+    background: linear-gradient(35deg, #0019fb, #15ff00);
+       
+}
+
+input {
+    cursor: none;
+}
+
+label {
+    color: #FFF;
+    margin-right: 10px;
+    padding-bottom: 20px;
+    cursor: none;
+    
+}
+
+select {
+    cursor: none;
+}
+
+p {
+    max-width: 450px;
+}
+
+.item {
+    margin-bottom: 24px;
+}
+
+hr {
+    border:0; 
+    box-shadow:0px 5px 10px #00e1ff; 
+    background:#d5d8d9; 
+    padding:5px; 
+    margin:5px;
+}
+
+.pag {
+    display: flex;
+    justify-content: center;
+    color: #FFF;
+    align-items: center;
+    
+}
+#pagina {
+    margin: 20px;
+}
+
+
+/* ============================================================
+                   ESTILIZAÇÃO DO CURSOR DO MOUSE
+*/
+@keyframes rotateCursor {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes expandCursor {
+    0% {
+        opacity: 0;
+        border-radius: 50%;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        border-radius: 25%;
+    }
+    100% {
+        opacity: 0;
+        border-radius: 0;
+        transform: scale(2);
+    }
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #7bf0ff;
+    z-index: 5;
+    animation: rotateCursor 2s linear infinite;
+    pointer-events: none; 
+    /* para não perder o efeito do click */
+    
+}
+
+.cursor:before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 1px solid #00ff91;
+    background: transparent;
+    top: -11px;
+    left: -11px; /*-10 para centralizar*/
+    position: absolute;
+    display: block;
+    
+}
+
+.cursor:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: block;
+    border: 1px solid #ffffff;
+    background: transparent;
+    top: 0px;
+    left: 0px; 
+    position: absolute;
+    display: block;
+    animation: rotateCursor 3s linear infinite;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.cursor-expand:after {
+    animation: expandCursor 0.4s ease-out forwards;
+}
+   
+
+@media (max-width: 920px) {
+    .inputs {
+        padding-inline: 25px;
+      
+    }
+
+    .cursor {
+        opacity: 0;
+    }
+
+    .inputs input[type="checkbox"]:last-of-type {
+        margin-left: 0px;
+    
+}
+
+#gender {
+    margin-left: 73px;
+}
+
+
+}

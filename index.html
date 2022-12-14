@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching Rick and Morty data</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="efect">
+
+        <div class="container">
+
+            <div class="imagem">
+                <img src="./images/Comp_1.gif">
+            </div>
+            <form>
+                <div class="group-form">
+                    <p class="infoDesejada">Nome do Personagem:</p>
+                    <input type="text" id="name" placeholder="Exemplo: Rick">
+                </div>
+                <p class="infoDesejada">Informações desejadas do Personagem:</p>
+
+                <div class="inputs">
+                        <input type="checkbox" name="imagem" id="image">
+                        <label for="image">Foto</label>
+                    
+                        <input type="checkbox" name="especie" id="species">
+                        <label for="species">Espécie</label>
+                    
+                        <input type="checkbox" name="status" id="status">
+                        <label for="status">Status</label>
+                    
+                        <input type="checkbox" name="gender" id="gender">
+                        <label for="gender">Gênero</label>
+                    
+                        <br>
+                        <input type="checkbox" name="episodes" id="episodes">
+                        <label for="episodes">Episódios em que aparece</label>
+                </div>
+
+                <div class="group-form">
+                    <input type="submit" value="Pesquisar">
+                </div>
+            </form>
+            <div id="imgPerson">
+            </div>
+            <div class="pag">
+                Página :
+                <select name="pagina" id="pagina" onchange="apiRick(this.value)">Página:
+                    <script>
+                        // este "for" é só para preencher de 1 a 42 números na barra de páginas
+                        for (let i = 1; i <= 42; i++) {
+                            document.write(`<option value="${i}">${i}</option>`); 
+                        }
+                    </script>
+                </select>
+            </div>
+                <div id="res"></div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+
+
+
+
+<!-- FONTES:
+    https://www.youtube.com/watch?v=vdytGGKyJKE
+    https://www.youtube.com/watch?v=f5es-PpaUI8 
+    https://www.youtube.com/watch?v=YvYmWPpCncc
+    https://www.youtube.com/watch?v=ksZqb-Qow5E
+    https://www.youtube.com/watch?v=YGPfz1X9ggw
+-->
+
+</html>
